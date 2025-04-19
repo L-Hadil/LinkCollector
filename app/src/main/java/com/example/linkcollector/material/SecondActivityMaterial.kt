@@ -13,7 +13,7 @@ class SecondActivityMaterial : AppCompatActivity() {
     private lateinit var binding: ActivitySecondMaterialBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.Theme_LinkCollector_Material) // assure que le bon thème est appliqué
+        setTheme(R.style.Theme_LinkCollector_Material)
         super.onCreate(savedInstanceState)
         binding = ActivitySecondMaterialBinding.inflate(layoutInflater)
         setContentView(binding.root)

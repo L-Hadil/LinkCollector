@@ -1,69 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light"
-    android:padding="24dp">
+    android:background="@color/background_light">
 
-    <com.google.android.material.card.MaterialCardView
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="8dp"
-        app:strokeColor="@color/button_primary"
-        app:strokeWidth="2dp">
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTint="@color/button_primary"
+        android:title="Aperçu des données"
+        android:titleTextColor="@android:color/white"
+        app:titleCentered="true"
+        app:elevation="6dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:padding="24dp"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp"
             android:gravity="center_horizontal">
 
-            <!-- Titre -->
-            <TextView
-                android:id="@+id/previewTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Les informations saisies"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary"
-                android:layout_marginBottom="24dp" />
-
-            <!-- Nom -->
-            <TextView
-                android:id="@+id/textNom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nom :"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary"
-                android:layout_marginBottom="8dp" />
-
-            <!-- Prénom -->
-            <TextView
-                android:id="@+id/textPrenom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Prénom :"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary"
-                android:layout_marginBottom="16dp" />
-
-            <!-- WebView GitHub -->
-            <android.webkit.WebView
-                android:id="@+id/webPreview"
+            <!-- Carte infos -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MyMaterialCard"
+                android:layout_marginBottom="24dp"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:background="@drawable/rounded_input_background"
-                android:elevation="4dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp" />
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/textNom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nom :"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/textPrenom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prénom :"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Carte WebView -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MyMaterialCard"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="WebViewLayout">
+
+                <WebView
+                    android:id="@+id/webPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@android:color/white" />
+            </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-</ScrollView>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

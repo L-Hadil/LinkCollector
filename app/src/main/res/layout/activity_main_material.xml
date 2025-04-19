@@ -1,113 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light"
-    android:padding="24dp">
+    android:background="@color/background_light">
 
-    <com.google.android.material.card.MaterialCardView
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="8dp"
-        app:strokeColor="@color/button_primary"
-        app:strokeWidth="2dp">
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTint="@color/button_primary"
+        android:title="LinkCollector - Material"
+        android:titleTextColor="@android:color/white"
+        app:titleCentered="true"
+        app:elevation="6dp" />
 
-        <LinearLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:padding="24dp"
+        android:fillViewport="true">
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp"
-            android:gravity="center_horizontal">
+            style="@style/Widget.MyMaterialCard">
 
-            <!-- Titre -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Informations Utilisateur"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="@color/text_primary"
-                android:layout_marginBottom="24dp" />
-
-            <!-- Nom -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nom">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editNom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Prénom -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Prénom"
-                android:layout_marginTop="16dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editPrenom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- GitHub -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Lien GitHub"
-                android:layout_marginTop="16dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editGitHub"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textUri"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- LinkedIn -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Lien LinkedIn"
-                android:layout_marginTop="16dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editLinkedin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textUri"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Boutons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="32dp"
-                android:weightSum="2">
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center_horizontal">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnValider"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Valider"
-                    android:layout_marginEnd="8dp" />
+                    android:text="Informations Utilisateur"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="24dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnAnnuler"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
+                <!-- Nom -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Annuler" />
+                    android:hint="Nom">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editNom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Prénom -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Prénom"
+                    android:layout_marginTop="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editPrenom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- GitHub -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Lien GitHub"
+                    android:layout_marginTop="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editGitHub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textUri" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- LinkedIn -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Lien LinkedIn"
+                    android:layout_marginTop="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editLinkedin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textUri" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Boutons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="2">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnValider"
+                        style="@style/Widget.MyMaterialButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Valider"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAnnuler"
+                        style="@style/Widget.MyMaterialButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Annuler"
+                        android:textColor="@color/button_primary"
+                        android:backgroundTint="@color/background_light"
+                        app:strokeColor="@color/button_primary"
+                        app:strokeWidth="2dp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-</ScrollView>
+        </com.google.android.material.card.MaterialCardView>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

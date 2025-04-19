@@ -39,16 +39,14 @@ class MainActivityClassic : AppCompatActivity() {
                 linkedin = editLinkedin.text.toString()
             )
 
-            // Enregistrer les données dans un fichier
             FileHelper.saveUserData(this, user)
 
-            // Lancer le service pour télécharger les pages HTML
             val serviceIntent = Intent(this, HtmlDownloadService::class.java).apply {
                 putExtra("urlList", arrayListOf(user.gitHub, user.linkedin))
             }
             startService(serviceIntent)
 
-            // Passer à la seconde activité
+
             val intent = Intent(this, SecondActivityClassic::class.java)
             intent.putExtra("user", user)
             startActivity(intent)
