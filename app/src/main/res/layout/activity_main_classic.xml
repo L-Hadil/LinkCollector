@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:padding="24dp"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/rounded_button_secondary"
+        android:padding="24dp"
+        android:descendantFocusability="afterDescendants">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Information"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:textColor="@android:color/black" />
+
+        <!-- Nom -->
+        <EditText
+            android:id="@+id/editNom"
+            style="@style/StyledInput"
+            android:hint="Nom"
+            android:inputType="textPersonName"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:cursorVisible="true"
+            android:imeOptions="actionNext"/>
+
+        <!-- Prénom -->
+        <EditText
+            android:id="@+id/editPrenom"
+            style="@style/StyledInput"
+            android:hint="Prénom"
+            android:inputType="textPersonName"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:cursorVisible="true"
+            android:imeOptions="actionNext"/>
+
+        <!-- GitHub -->
+        <EditText
+            android:id="@+id/editGitHub"
+            style="@style/StyledInput"
+            android:hint="Lien GitHub"
+            android:inputType="textUri"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:cursorVisible="true"
+            android:imeOptions="actionNext"/>
+
+        <!-- LinkedIn -->
+        <EditText
+            android:id="@+id/editLinkedin"
+            style="@style/StyledInput"
+            android:hint="Lien LinkedIn"
+            android:inputType="textUri"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:cursorVisible="true"
+            android:imeOptions="actionDone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnValider"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Valider"
+                android:background="@drawable/rounded_button_secondary"
+                android:textColor="@color/button_text_primary"
+                android:layout_marginEnd="8dp"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/btnAnnuler"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Annuler"
+                android:background="@drawable/rounded_button_secondary"
+                android:textColor="@color/button_text_primary"
+                android:elevation="2dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

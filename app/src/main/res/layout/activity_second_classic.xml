@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background_light"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/rounded_button_secondary"
+        android:padding="24dp">
+
+        <!-- Titre -->
+        <TextView
+            android:id="@+id/previewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Les informations saisies"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Nom -->
+        <TextView
+            android:id="@+id/textNom"
+            style="@style/StyledInput"
+            android:text="Nom :"
+            android:textColor="@color/text_primary" />
+
+        <!-- Prénom -->
+        <TextView
+            android:id="@+id/textPrenom"
+            style="@style/StyledInput"
+            android:text="Prénom :"
+            android:textColor="@color/text_primary" />
+
+        <!-- WebView qui affiche la page GitHub -->
+        <WebView
+            android:id="@+id/webPreview"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_input_background"
+            android:elevation="4dp"
+            tools:ignore="WebViewLayout" />
+
+    </LinearLayout>
+</ScrollView>
