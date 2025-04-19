@@ -23,7 +23,6 @@ class HtmlDownloadService : IntentService("HtmlDownloadService") {
                 if (connection.responseCode == HttpURLConnection.HTTP_OK) {
                     val content = connection.inputStream.bufferedReader().use { it.readText() }
 
-                    // Création d’un nom de fichier simple à partir de l’URL
                     val fileName = url.host.replace(".", "_") + ".html"
                     val file = File(outputDir, fileName)
                     file.writeText(content)

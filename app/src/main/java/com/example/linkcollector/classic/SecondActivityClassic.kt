@@ -14,7 +14,7 @@ class SecondActivityClassic : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_classic)
 
-        // On ne récupère plus que nom/prénom et le WebView
+
         val textNom    = findViewById<TextView>(R.id.textNom)
         val textPrenom = findViewById<TextView>(R.id.textPrenom)
         val webPreview = findViewById<WebView>(R.id.webPreview)
@@ -27,11 +27,9 @@ class SecondActivityClassic : AppCompatActivity() {
             webPreview.apply {
                 webViewClient = WebViewClient()
                 settings.javaScriptEnabled = true
-                loadUrl(it.gitHub)  // on charge la page GitHub maintenant
+                loadUrl(it.gitHub)
             }
         }
     }
 }
 
-// https://github.com/L-Hadil
-// https://www.linkedin.com/in/hadil-ladj01/
